@@ -14,11 +14,11 @@
 
 > An employee can update his/her avatar along with the name and password while also being able to toggle between light and dark mode.
 
-> The website is connected to a supabase website at the backend
+> The website is connected to a supabase website at the backend.
 
-> Website is hostel on vercel. https://hotel-booking-system-internal.vercel.app/
+> Website is hostel on vercel: https://hotel-booking-system-internal.vercel.app/
 
-> To log in pls use the following credentials ---->
+> To log in pls use the following credentials. ---->
 > email : bowob16579@heweek.com,
 > password: passwordabc
 

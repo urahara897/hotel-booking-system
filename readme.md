@@ -19,7 +19,7 @@
 > Website is hostel on vercel. https://hotel-booking-system-internal.vercel.app/
 
 > To log in pls use the following credentials ---->
-> email : bowob16579@heweek.com
+> email : bowob16579@heweek.com,
 > password: passwordabc
 
 P.S - This webapp is not responsive for mobile users yet.

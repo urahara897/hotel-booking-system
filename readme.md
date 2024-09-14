@@ -2,7 +2,7 @@
 
 > This is a personal side project for learning purposes.
 
-> The website is connected to a supabase website at the backend.
+> The website is connected to a supabase database at the backend.
 
 > This website is an internal hotel management system made with React.js where employees can login, logout, onboard other employees.
 

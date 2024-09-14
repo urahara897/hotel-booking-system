@@ -12,4 +12,4 @@ To log in pls use the following credentials ---->
 email : bowob16579@heweek.com
 password: passwordabc
 
-P.S- This webapp is not responsive for mobile users
+P.S- This webapp is not responsive for mobile users yet.

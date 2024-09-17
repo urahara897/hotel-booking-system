@@ -4,7 +4,7 @@
 
 > The website is connected to a supabase database at the backend.
 
-> This website is an internal hotel management system made with React.js where employees can login, logout, onboard other employees.
+> This website is an internal hotel management system made with React.js and Styled components where employees can login, logout, onboard other employees(External website ----> https://hotel-booking-system-external.vercel.app/ Source Code ----> https://github.com/urahara897/hotel-booking-system-external).
 
 > Since this website is solely for internal usage and not customer support normal sign in of users are not permitted. Instead as mentioned in the previous point only existing employees can onboard new employees. Once a new employee is onboarded, an email verification link will be sent automatically to the employee email address(sent by supabase). On verifying , the new employee account will be active.
 

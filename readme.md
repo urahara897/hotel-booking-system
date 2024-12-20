@@ -4,11 +4,6 @@
 
 This is an internal hotel management system built with React.js and Styled Components. It serves as the backend management interface for hotel employees to manage bookings, cabins, and guest information.
 
-## Live
-
-Internal Website (this repo): [https://hotel-booking-system-internal.vercel.app/](https://hotel-booking-system-internal.vercel.app/login)
-External Website: [https://hotel-booking-system-external.vercel.app/](https://hotel-booking-system-external.vercel.app/), Repo: [https://github.com/urahara897/hotel-booking-system-external](https://github.com/urahara897/hotel-booking-system-external)
-
 ## System Architecture
 
 - Frontend: React.js with Styled Components

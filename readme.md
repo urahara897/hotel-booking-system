@@ -1,27 +1,81 @@
-# Hotel Internal Booking System
+# Hotel Internal Booking Tracking System
 
-> This is a personal side project for learning purposes.
+## Overview
 
-> The website is connected to a supabase database at the backend.
+This is an internal hotel management system built with React.js and Styled Components. It serves as the backend management interface for hotel employees to manage bookings, cabins, and guest information.
 
-> This website is an internal hotel management system made with React.js and Styled components where employees can login, logout, onboard other employees(External website ----> https://hotel-booking-system-external.vercel.app/ Source Code ----> https://github.com/urahara897/hotel-booking-system-external).
+## Live
 
-> Since this website is solely for internal usage and not customer support normal sign in of users are not permitted. Instead as mentioned in the previous point only existing employees can onboard new employees. Once a new employee is onboarded, an email verification link will be sent automatically to the employee email address(sent by supabase). On verifying , the new employee account will be active.
+Internal Website (this repo): [https://hotel-booking-system-internal.vercel.app/](https://hotel-booking-system-internal.vercel.app/login)
+External Website: [https://hotel-booking-system-external.vercel.app/](https://hotel-booking-system-external.vercel.app/), Repo: [https://github.com/urahara897/hotel-booking-system-external](https://github.com/urahara897/hotel-booking-system-external)
 
-> Employees can manage cabin/room details like description, maximum capacity of each cabin, price of the cabin for a night and discount if applicable.
+## System Architecture
 
-> The booking page which shows the unconfirmed, checked-in and checked-out bookings.
+- Frontend: React.js with Styled Components
+- Backend: Supabase (Database and Authentication)
+- State Management: React Query
+- Routing: React Router
+- Charts: Recharts
+- Styling: Styled Components
+- Form Handling: React Hook Form
+- Notifications: React Hot Toast
 
-> The home page is a dashboard which shows daily arrivals and employees can check in/ check out guests directly from home page in addition to the booking page.
+## Key Features
 
-> Home page also shows a pie chart of the bookings in a certain period of time and the chart of the sales(buisness conducted) over a certain period of time.
+1. **Authentication & User Management**
 
-> An employee can update his/her avatar along with the name and password while also being able to toggle between light and dark mode.
+   - Employee login/logout
+   - Employee onboarding (only existing employees can onboard new employees)
+   - Email verification for new employees
+   - Profile management (avatar, name, password updates)
 
-> Website is hosted on vercel: https://hotel-booking-system-internal.vercel.app/
+2. **Cabin Management**
 
-> To log in pls use the following credentials. ---->
-> email : bowob16579@heweek.com,
-> password: passwordabc
+   - Add/Edit/Delete cabins
+   - Set cabin details (description, capacity, pricing)
+   - Manage discounts
+   - Image upload for cabins
 
-P.S - This webapp is not responsive for mobile users yet.
+3. **Booking Management**
+
+   - View all bookings
+   - Check-in/Check-out functionality
+   - Booking status tracking
+   - Filter and sort bookings
+   - Pagination support
+
+4. **Dashboard & Analytics**
+
+   - Sales statistics
+   - Booking trends visualization
+   - Occupancy rates
+   - Daily check-in/check-out overview
+
+5. **Settings**
+
+   - Manage minimum booking duration
+   - Set breakfast pricing
+   - Configure maximum guests per booking
+
+6. **UI/UX**
+   - Dark/Light mode toggle
+   - Responsive design (desktop)
+   - Interactive charts and statistics
+   - Toast notifications
+
+## Related Systems
+
+- Internal System (This repo): [https://hotel-booking-system-internal.vercel.app/](https://hotel-booking-system-internal.vercel.app/)
+- External Customer-Facing System: [https://hotel-booking-system-external.vercel.app/](https://hotel-booking-system-external.vercel.app/)
+  - Source Code: [https://github.com/urahara897/hotel-booking-system-external](https://github.com/urahara897/hotel-booking-system-external)
+
+## Demo Access
+
+To access the demo system, use the following credentials:
+
+- Email: bowob16579@heweek.com
+- Password: passwordabc
+
+## Note
+
+This webapp is currently optimized for desktop use and is not responsive for mobile users.

@@ -12,6 +12,9 @@ const StyledAppLayout = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
+    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
 `;
 
@@ -21,7 +24,9 @@ const Main = styled.main`
   overflow: scroll;
 
   @media (max-width: 768px) {
-    padding: 2rem 1.6rem 3.2rem;
+    padding: 1.6rem;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 `;
 

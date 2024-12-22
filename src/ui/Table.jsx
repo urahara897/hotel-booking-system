@@ -23,25 +23,25 @@ const CommonRow = styled.div`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    padding: 1.6rem;
+    gap: 1rem;
+    padding: 1.2rem;
     border-bottom: 1px solid var(--color-grey-100);
 
-    /* Create a grid layout for the booking info */
     & > div {
+      width: 100%;
       display: grid;
-      grid-template-columns: 10rem 1fr;
-      gap: 1.2rem;
+      grid-template-columns: 8rem 1fr;
+      gap: 1rem;
       align-items: center;
 
       &::before {
         content: attr(data-label);
         font-weight: 500;
         color: var(--color-grey-500);
+        font-size: 1.2rem;
       }
     }
 
-    /* Hide header labels on mobile */
     &.header {
       display: none;
     }

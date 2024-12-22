@@ -16,12 +16,20 @@ const StyledDashboardLayout = styled.div`
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto;
+    gap: 2rem;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    gap: 1.6rem;
+
+    & > * {
+      min-width: 0;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
   }
 `;
 

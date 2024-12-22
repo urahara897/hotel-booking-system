@@ -7,11 +7,13 @@ const TableOperations = styled.div`
 
   @media (max-width: 768px) {
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.8rem;
+    padding: 0 0.8rem;
 
     & > * {
       font-size: 1.2rem;
-      padding: 0.6rem 1rem;
+      padding: 0.4rem 0.8rem;
+      white-space: nowrap;
     }
   }
 `;

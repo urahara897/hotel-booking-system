@@ -29,15 +29,17 @@ const CommonRow = styled.div`
 
     & > div[data-label] {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       width: 100%;
+      gap: 1.2rem;
 
       &::before {
         content: attr(data-label);
         font-weight: 500;
         color: var(--color-grey-500);
         font-size: 1.2rem;
+        min-width: 8rem;
       }
     }
 
@@ -55,13 +57,16 @@ const CommonRow = styled.div`
 
 const StyledHeader = styled(CommonRow)`
   padding: 1.6rem 2.4rem;
-
   background-color: var(--color-grey-50);
   border-bottom: 1px solid var(--color-grey-100);
   text-transform: uppercase;
   letter-spacing: 0.4px;
   font-weight: 600;
   color: var(--color-grey-600);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledRow = styled(CommonRow)`

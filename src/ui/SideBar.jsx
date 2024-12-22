@@ -10,6 +10,12 @@ const StyledSideBar = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+
+  @media (max-width: 768px) {
+    & > div:first-child {
+      display: none;
+    }
+  }
 `;
 
 function SideBar() {

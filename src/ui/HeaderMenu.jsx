@@ -8,6 +8,25 @@ import DarkModeToggle from "./DarkModeToggle";
 const StyledHeaderMenu = styled.ul`
   display: flex;
   gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    gap: 1.2rem;
+    align-items: center;
+
+    & > li {
+      display: flex;
+      align-items: center;
+    }
+
+    button {
+      padding: 0.4rem;
+
+      & svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
 `;
 
 function HeaderMenu() {

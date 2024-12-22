@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import HeaderMenu from "./HeaderMenu";
 import UserAvatar from "../features/authentication/UserAvatar";
+import Logo from "./Logo";
 
 const StyledHeader = styled.header`
   background-color: var(--color-grey-0);
@@ -12,26 +13,51 @@ const StyledHeader = styled.header`
   justify-content: flex-end;
 
   @media (max-width: 768px) {
-    padding: 1.2rem;
+    padding: 0.8rem 1.6rem;
     gap: 1.2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-grey-100);
   }
 `;
 
-const UserInfo = styled.div`
+const HeaderLeft = styled.div`
+  display: none;
+
   @media (max-width: 768px) {
-    span {
-      display: none;
+    display: flex;
+    align-items: center;
+    & img {
+      height: 3.6rem;
+      width: auto;
     }
+  }
+`;
+
+const HeaderRight = styled.div`
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    gap: 0.8rem;
   }
 `;
 
 function Header() {
   return (
     <StyledHeader>
-      <UserInfo>
+      <HeaderLeft>
+        <Logo />
+      </HeaderLeft>
+      <HeaderRight>
         <UserAvatar />
-      </UserInfo>
-      <HeaderMenu />
+        <HeaderMenu />
+      </HeaderRight>
     </StyledHeader>
   );
 }

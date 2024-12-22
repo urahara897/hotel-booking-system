@@ -17,6 +17,11 @@ const Img = styled.img`
   object-fit: cover;
   object-position: center;
   transform: scale(1.5) translateX(-7px);
+
+  @media (max-width: 768px) {
+    transform: scale(1.5) translateX(0);
+    margin-right: 1.2rem;
+  }
 `;
 
 const Cabin = styled.div`
@@ -24,6 +29,10 @@ const Cabin = styled.div`
   font-weight: 600;
   color: var(--color-grey-600);
   font-family: "Sono";
+
+  @media (max-width: 768px) {
+    margin-left: 0.8rem;
+  }
 `;
 
 const Price = styled.div`

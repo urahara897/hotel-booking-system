@@ -8,7 +8,8 @@ const Heading = styled.h1`
       font-weight: 600;
 
       @media (max-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        padding: 0 0.8rem;
       }
     `}
 

@@ -26,6 +26,7 @@ const Main = styled.main`
   @media (max-width: 768px) {
     padding: 1.6rem;
     padding-bottom: 8rem;
+    padding-top: 7.2rem;
   }
 `;
 

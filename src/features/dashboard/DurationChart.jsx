@@ -27,10 +27,36 @@ const ChartBox = styled.div`
   }
 
   @media (max-width: 768px) {
-    overflow: hidden;
+    padding: 1.6rem;
 
-    & .recharts-responsive-container {
-      margin: 0 -1.6rem;
+    & .recharts-wrapper {
+      width: 80% !important;
+      min-width: 0;
+      margin: 0 auto;
+      height: 240px !important;
+    }
+
+    & .recharts-legend-wrapper {
+      position: static !important;
+      margin-top: 0rem;
+      width: 80% !important;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    & .recharts-default-legend {
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      padding: 0;
+      font-size: 1.2rem;
+    }
+
+    & .recharts-legend-item {
+      margin: 0 !important;
     }
   }
 `;
@@ -163,28 +189,32 @@ function DurationChart({ confirmStays }) {
             data={data}
             nameKey="duration"
             dataKey="value"
-            innerRadius={85}
-            outerRadius={110}
-            cx="40%"
-            cy="50%"
+            innerRadius={40}
+            outerRadius={65}
+            cx="50%"
+            cy="35%"
             paddingAngle={3}
           >
-            {startDataLight.map((entry) => (
+            {data.map((entry) => (
               <Cell
+                key={entry.duration}
                 fill={entry.color}
                 stroke={entry.color}
-                key={entry.duration}
               />
             ))}
           </Pie>
           <Tooltip />
           <Legend
-            verticalAlign="middle"
-            align="right"
-            width="30%"
-            layout="vertical"
-            iconSize={15}
+            verticalAlign="bottom"
+            align="center"
+            layout="horizontal"
+            iconSize={8}
             iconType="circle"
+            wrapperStyle={{
+              paddingTop: "1rem",
+              fontSize: "1.2rem",
+              marginBottom: "-1rem",
+            }}
           />
         </PieChart>
       </ResponsiveContainer>

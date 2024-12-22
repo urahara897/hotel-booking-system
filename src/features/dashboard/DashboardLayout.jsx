@@ -19,9 +19,18 @@ const StyledDashboardLayout = styled.div`
     gap: 1.6rem;
     padding-bottom: 8rem;
 
-    & > * {
-      min-width: 0;
+    & > div:first-child {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 0.8rem;
       width: 100%;
+      overflow-x: auto;
+      gap: 1.2rem;
+
+      & > * {
+        min-width: 70px;
+        flex: 1;
+      }
     }
   }
 `;

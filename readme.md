@@ -41,10 +41,12 @@ This is an internal hotel management system built with React.js and Styled Compo
 
 4. **Dashboard & Analytics**
 
-   - Sales statistics
+   - Sales statistics with interactive charts
    - Booking trends visualization
    - Occupancy rates
    - Daily check-in/check-out overview
+   - Mobile-optimized data visualization
+   - Interactive dialogs for detailed views
 
 5. **Settings**
 
@@ -54,9 +56,21 @@ This is an internal hotel management system built with React.js and Styled Compo
 
 6. **UI/UX**
    - Dark/Light mode toggle
-   - Responsive design (desktop)
+   - Fully responsive design (mobile & desktop)
    - Interactive charts and statistics
    - Toast notifications
+   - Mobile-optimized navigation
+   - Touch-friendly interfaces
+   - Adaptive layouts for different screen sizes
+
+## Mobile Features
+
+- Bottom navigation bar for easy access
+- Collapsible statistics with detailed dialogs
+- Touch-optimized charts and tables
+- Responsive forms and inputs
+- Swipeable and scrollable content
+- Mobile-first data visualization
 
 ## Related Systems
 
@@ -73,4 +87,4 @@ To access the demo system, use the following credentials:
 
 ## Note
 
-This webapp is fully responsive and works on both desktop and mobile devices.
+This webapp is fully responsive for both desktop and mobile devices.

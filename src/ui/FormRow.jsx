@@ -26,10 +26,28 @@ const StyledFormRow = styled.div`
     justify-content: flex-end;
     gap: 1.2rem;
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+
+    &:has(button) {
+      flex-direction: column;
+      gap: 1rem;
+
+      & button {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 const Label = styled.label`
   font-weight: 500;
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const Error = styled.span`

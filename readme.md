@@ -73,4 +73,4 @@ To access the demo system, use the following credentials:
 
 ## Note
 
-This webapp is currently optimized for desktop use and is not responsive for mobile users.
+This webapp is fully responsive and works on both desktop and mobile devices.

@@ -25,8 +25,7 @@ const Main = styled.main`
 
   @media (max-width: 768px) {
     padding: 1.6rem;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8rem;
   }
 `;
 

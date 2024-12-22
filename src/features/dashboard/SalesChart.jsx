@@ -23,6 +23,16 @@ const StyledSalesChart = styled(DashboardBox)`
   }
 `;
 
+const ChartBox = styled.div`
+  @media (max-width: 768px) {
+    overflow: hidden;
+
+    & .recharts-responsive-container {
+      margin: 0 -1.6rem;
+    }
+  }
+`;
+
 /* eslint-disable react/prop-types */
 function SalesChart({ bookings, numDays }) {
   const { isDarkMode } = useDarkMode();
@@ -59,47 +69,49 @@ function SalesChart({ bookings, numDays }) {
       };
 
   return (
-    <StyledSalesChart>
-      <Heading as="h3">
-        Sales from {format(allDates.at(0), "MMM dd yyyy")} &mdash;{" "}
-        {format(allDates.at(-1), "MMM dd yyyy")}
-      </Heading>
+    <ChartBox>
+      <StyledSalesChart>
+        <Heading as="h3">
+          Sales from {format(allDates.at(0), "MMM dd yyyy")} &mdash;{" "}
+          {format(allDates.at(-1), "MMM dd yyyy")}
+        </Heading>
 
-      <ResponsiveContainer height={300} width="100%">
-        <AreaChart data={data}>
-          <XAxis
-            dataKey="label"
-            tick={{ fill: colors.text }}
-            tickLine={{ stroke: colors.text }}
-          />
-          <YAxis
-            unit="$"
-            tick={{ fill: colors.text }}
-            tickLine={{ stroke: colors.text }}
-          />
-          <CartesianGrid strokeDasharray="4" />
-          <Tooltip contentStyle={{ backgroundColor: colors.background }} />
-          <Area
-            dataKey="totalSales"
-            type="monotone"
-            stroke={colors.totalSales.stroke}
-            fill={colors.totalSales.fill}
-            strokeWidth={2}
-            name="Total Sales"
-            unit="$"
-          />
-          <Area
-            dataKey="extraSales"
-            type="monotone"
-            stroke={colors.extraSales.stroke}
-            fill={colors.extraSales.fill}
-            strokeWidth={2}
-            name="Extra Sales"
-            unit="$"
-          />
-        </AreaChart>
-      </ResponsiveContainer>
-    </StyledSalesChart>
+        <ResponsiveContainer height={300} width="100%">
+          <AreaChart data={data}>
+            <XAxis
+              dataKey="label"
+              tick={{ fill: colors.text }}
+              tickLine={{ stroke: colors.text }}
+            />
+            <YAxis
+              unit="$"
+              tick={{ fill: colors.text }}
+              tickLine={{ stroke: colors.text }}
+            />
+            <CartesianGrid strokeDasharray="4" />
+            <Tooltip contentStyle={{ backgroundColor: colors.background }} />
+            <Area
+              dataKey="totalSales"
+              type="monotone"
+              stroke={colors.totalSales.stroke}
+              fill={colors.totalSales.fill}
+              strokeWidth={2}
+              name="Total Sales"
+              unit="$"
+            />
+            <Area
+              dataKey="extraSales"
+              type="monotone"
+              stroke={colors.extraSales.stroke}
+              fill={colors.extraSales.fill}
+              strokeWidth={2}
+              name="Extra Sales"
+              unit="$"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </StyledSalesChart>
+    </ChartBox>
   );
 }
 

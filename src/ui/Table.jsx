@@ -23,16 +23,15 @@ const CommonRow = styled.div`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
     padding: 1.2rem;
-    border-bottom: 1px solid var(--color-grey-100);
+    position: relative;
 
-    & > div {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 8rem 1fr;
-      gap: 1rem;
+    & > div[data-label] {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
+      width: 100%;
 
       &::before {
         content: attr(data-label);
@@ -40,6 +39,12 @@ const CommonRow = styled.div`
         color: var(--color-grey-500);
         font-size: 1.2rem;
       }
+    }
+
+    & > div:last-child {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
     }
 
     &.header {

@@ -15,19 +15,15 @@ const NavList = styled.ul`
 
   @media (max-width: 768px) {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0.8rem;
-    gap: 0;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-
-    /* Hide scrollbar */
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    background-color: var(--color-grey-0);
+    border-top: 1px solid var(--color-grey-100);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
   }
 `;
 
@@ -45,15 +41,17 @@ const StyledNavLink = styled(NavLink)`
 
     @media (max-width: 768px) {
       padding: 0.8rem;
-      font-size: 1.2rem;
+      font-size: 1rem;
       flex-direction: column;
       gap: 0.4rem;
-      min-width: 60px;
-      justify-content: center;
 
       & svg {
-        width: 2rem;
-        height: 2rem;
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      span {
+        font-size: 1.2rem;
       }
     }
   }

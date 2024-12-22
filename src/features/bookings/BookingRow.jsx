@@ -48,22 +48,7 @@ const Amount = styled.div`
 `;
 
 /* eslint-disable react/prop-types */
-function BookingRow({
-  booking: {
-    id: bookingId,
-    // eslint-disable-next-line no-unused-vars
-    created_at,
-    startDate,
-    endDate,
-    numNights,
-    // eslint-disable-next-line no-unused-vars
-    numGuests,
-    totalPrice,
-    status,
-    guests: { fullName: guestName, email },
-    cabins: { name: cabinName },
-  },
-}) {
+function BookingRow({ booking }) {
   const navigate = useNavigate();
   const { checkout, isCheckingOut } = useCheckout();
   const { deleteBooking, isDeleting } = useDeleteBooking();
@@ -76,52 +61,64 @@ function BookingRow({
 
   return (
     <Table.Row>
-      <Cabin>{cabinName}</Cabin>
+      <div data-label="Cabin">
+        <Cabin>{booking?.cabins?.name}</Cabin>
+      </div>
 
-      <Stacked>
-        <span>{guestName}</span>
-        <span>{email}</span>
-        <span>Booking ID - {bookingId}</span>
-      </Stacked>
+      <div data-label="Guest">
+        <Stacked>
+          <span>{booking.guests.fullName}</span>
+          <span>{booking.guests.email}</span>
+        </Stacked>
+      </div>
 
-      <Stacked>
-        <span>
-          {isToday(new Date(startDate))
-            ? "Today"
-            : formatDistanceFromNow(startDate)}{" "}
-          &rarr; {numNights} night stay
-        </span>
-        <span>
-          {format(new Date(startDate), "MMM dd yyyy")} &mdash;{" "}
-          {format(new Date(endDate), "MMM dd yyyy")}
-        </span>
-      </Stacked>
+      <div data-label="Dates">
+        <Stacked>
+          <span>
+            {isToday(new Date(booking.startDate))
+              ? "Today"
+              : formatDistanceFromNow(booking.startDate)}{" "}
+            &rarr; {booking.numNights} nights
+          </span>
+          <span>
+            {format(new Date(booking.startDate), "MMM dd yyyy")} &mdash;{" "}
+            {format(new Date(booking.endDate), "MMM dd yyyy")}
+          </span>
+        </Stacked>
+      </div>
 
-      <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
+      <div data-label="Status">
+        <Tag type={statusToTagName[booking.status]}>
+          {booking.status.replace("-", " ")}
+        </Tag>
+      </div>
 
-      <Amount>{formatCurrency(totalPrice)}</Amount>
+      <div data-label="Amount">
+        <Amount>{formatCurrency(booking.totalPrice)}</Amount>
+      </div>
+
       <Modal>
         <Menus.Menu>
-          <Menus.Toggle id={bookingId} />
-          <Menus.List id={bookingId}>
+          <Menus.Toggle id={booking.id} />
+          <Menus.List id={booking.id}>
             <Menus.Button
               icon={<HiEye />}
-              onClick={() => navigate(`/bookings/${bookingId}`)}
+              onClick={() => navigate(`/bookings/${booking.id}`)}
             >
               See Details
             </Menus.Button>
-            {status === "unconfirmed" && (
+            {booking.status === "unconfirmed" && (
               <Menus.Button
                 icon={<HiArrowDownOnSquare />}
-                onClick={() => navigate(`/checkin/${bookingId}`)}
+                onClick={() => navigate(`/checkin/${booking.id}`)}
               >
                 Check In
               </Menus.Button>
             )}
-            {status === "checked-in" && (
+            {booking.status === "checked-in" && (
               <Menus.Button
                 icon={<HiArrowUpOnSquare />}
-                onClick={() => checkout(bookingId)}
+                onClick={() => checkout(booking.id)}
                 disabled={isCheckingOut}
               >
                 Check Out
@@ -137,7 +134,7 @@ function BookingRow({
           <ConfirmDelete
             resourceName="booking"
             disabled={isDeleting}
-            onConfirm={() => deleteBooking(bookingId)}
+            onConfirm={() => deleteBooking(booking.id)}
           />
         </Modal.Window>
       </Modal>
